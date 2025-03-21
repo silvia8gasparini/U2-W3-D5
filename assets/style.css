@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=Vast+Shadow&display=swap');
+    body {
+    background-color: #ffffff;
+    color:#000000;
+    font-family: "IM Fell DW Pica";
+    }
+
+    nav a {
+    font-size: larger;
+    font-weight: bold;
+    }
+
+    footer span {
+    color: #ffffff;
+    }
+
+    .card {
+    background-color: #ffffff;
+    border: 1px solid #030303;
+    font-family: "IM Fell DW Pica";
+    }
+
+    .btn-custom {
+    background-color: #000000;
+    color: white;
+    font-family: "IM Fell DW Pica";
+    }
+    
+    .btn-custom:hover {
+    background-color: #8f8f8f;
+    }
+
+    .cart-item {
+    background-color: #f4e1c9;
+    color: #6a3f1b;
+    font-family: "Charm";
+    }
