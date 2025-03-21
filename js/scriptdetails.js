@@ -11,7 +11,7 @@ const filmId = urlParams.get("id");
 
 window.addEventListener("DOMContentLoaded", () => {
   fetch(API_URL + filmId, { headers })
-    .then(res => res.json())
+    .then(response => response.json())
     .then(film => {
       document.querySelector("img.card-img-top").src = film.imageUrl;
       document.getElementById("name").textContent = film.name;
@@ -31,8 +31,8 @@ function deleteConcert() {
       method: "DELETE",
       headers
     })
-      .then(res => {
-        if (!res.ok) throw new Error("Errore nella cancellazione");
+      .then(response => {
+        if (!response.ok) throw new Error("Errore nella cancellazione");
         alert("Film eliminato.");
         window.location.assign("./index.html");
       })

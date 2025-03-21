@@ -13,7 +13,7 @@ const filmId = urlParams.get("id");
 window.addEventListener("DOMContentLoaded", () => {
   if (filmId) {
     fetch(API_URL + filmId, { headers })
-      .then(res => res.json())
+      .then(response => response.json())
       .then(film => {
         document.getElementById("name").value = film.name;
         document.getElementById("description").value = film.description;
@@ -46,9 +46,9 @@ form.addEventListener("submit", (e) => {
     headers,
     body: JSON.stringify(film)
   })
-    .then(res => {
-      if (!res.ok) throw new Error("Errore durante il salvataggio");
-      return res.json();
+    .then(response => {
+      if (!response.ok) throw new Error("Errore durante il salvataggio");
+      return response.json();
     })
     .then(() => {
       alert("Film salvato con successo!");

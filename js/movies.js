@@ -153,9 +153,9 @@ const films = [
       },
       body: JSON.stringify(film)
     })
-    .then(res => {
-      if (!res.ok) throw new Error("Errore nella creazione");
-      return res.json();
+    .then(response => {
+      if (!response.ok) throw new Error("Errore nella creazione");
+      return response.json();
     })
     .then(data => console.log("Film inserito:", data.name))
     .catch(err => console.error("Errore:", err));
