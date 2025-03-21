@@ -4,7 +4,7 @@ const films = [
       "name": "The General",
       "description": "Una delle migliori commedie di Buster Keaton, ambientata durante la guerra civile americana.",
       "brand": "United Artists",
-      "imageUrl": "https://media.themoviedb.org/t/p/w500/nIp4gIXogCjfB1QABNsWwa9gSca.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/The_general_movie_poster.jpg/330px-The_general_movie_poster.jpg",
       "price": 9.99
     },
     {
@@ -16,14 +16,14 @@ const films = [
     },
     {
       "name": "The Kid",
-      "description": "Il primo lungometraggio di Charlie Chaplin. Un mix perfetto di comicità e commozione.",
+      "description": "Il primo lungometraggio di Charlie Chaplin.",
       "brand": "First National",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Kid_1921_poster.jpg/800px-The_Kid_1921_poster.jpg",
       "price": 10.99
     },
     {
       "name": "City Lights",
-      "description": "Una storia d'amore tenera e poetica. Uno dei capolavori assoluti di Chaplin.",
+      "description": "Una storia d'amore tenera e poetica.",
       "brand": "United Artists",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/City_Lights_poster.jpg/800px-City_Lights_poster.jpg",
       "price": 11.99
@@ -37,7 +37,7 @@ const films = [
     },
     {
       "name": "The Gold Rush",
-      "description": "L\u2019iconica danza dei panini e una corsa all'oro in Alaska. Imperdibile Chaplin.",
+      "description": "L'iconica danza dei panini e una corsa all'oro in Alaska.",
       "brand": "United Artists",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Gold_rush_poster.jpg/800px-Gold_rush_poster.jpg",
       "price": 10.50
@@ -58,7 +58,7 @@ const films = [
     },
     {
       "name": "Steamboat Bill, Jr.",
-      "description": "Keaton e il famoso trucco della facciata della casa che cade. Leggendario.",
+      "description": "Keaton e il famoso trucco della facciata della casa che cade.",
       "brand": "United Artists",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Steamboat_Bill_Jr_poster.jpg/800px-Steamboat_Bill_Jr_poster.jpg",
       "price": 9.90
@@ -86,7 +86,7 @@ const films = [
     },
     {
       "name": "Nosferatu",
-      "description": "Il primo Dracula cinematografico. Un classico dell'horror.",
+      "description": "Il primo Dracula cinematografico.",
       "brand": "Prana Film",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Nosferatuposter.jpg/800px-Nosferatuposter.jpg",
       "price": 9.70
@@ -121,7 +121,7 @@ const films = [
     },
     {
       "name": "The Birth of a Nation",
-      "description": "Innovazioni tecniche e narrazione storica (nonostante la controversia).",
+      "description": "Innovazioni tecniche e narrazione storica.",
       "brand": "Epoch Producing Co.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_Birth_of_a_Nation_poster.jpg/800px-The_Birth_of_a_Nation_poster.jpg",
       "price": 8.80
@@ -157,7 +157,7 @@ const films = [
       if (!res.ok) throw new Error("Errore nella creazione");
       return res.json();
     })
-    .then(data => console.log("🎬 Film inserito:", data.name))
+    .then(data => console.log("Film inserito:", data.name))
     .catch(err => console.error("Errore:", err));
   });
   
