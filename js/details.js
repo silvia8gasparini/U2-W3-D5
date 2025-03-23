@@ -28,16 +28,23 @@ const getMovieDetails = function () {
       return response.json();
     })
     .then((data) => {
-      const movieDetail = document.getElementById("movieDetail");
-      movieDetail.innerHTML = `
+      const movieDetails = document.getElementById("movieDetails");
+      movieDetails.innerHTML = `
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card text-light border-0 d-flex flex-column">
+          <div class="card text-dark border-0 d-flex flex-column">
             <img src="${data.imageUrl}" class="card-img-top" alt="${data.name}">
             <div class="card-body d-flex flex-column justify-content-between">
-              <h5 class="card-title text-color-1">${data.name}</h5>
+              <h5 class="card-title">${data.name}</h5>
               <p class="card-text">${data.description}</p>
               <p class="card-text">${data.brand}</p>
-              <p class="card-text fw-bold text-color-3">Prezzo: €${data.price}</p>
+              <p class="card-text fw-bold">Prezzo: €${data.price}</p>
+               <button
+              id="deleteBtn"
+              type="button"
+              class="btn btn-danger btn-sm px-4 py-3 m-3"
+            >
+              Elimina
+            </button>
             </div>
           </div>
         </div>
@@ -48,40 +55,8 @@ const getMovieDetails = function () {
       document.getElementById("editPrice").value = data.price;
       document.getElementById("editImgUrl").value = data.imageUrl;
 
-      document.getElementById("movieDetail").classList.remove("d-none");
+      document.getElementById("movieDetails").classList.remove("d-none");
 
-      document.getElementById("formEdit").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const updateMovie = {
-          name: document.getElementById("editName").value,
-          description: document.getElementById("editDescription").value,
-          price: parseFloat(document.getElementById("editPrice").value),
-          imageUrl: document.getElementById("editImgUrl").value,
-        };
-
-        fetch(APIUrl + movieId, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2RkMWVhNTM4MzRiZjAwMTUwMDA2ZjQiLCJpYXQiOjE3NDI1NDQ1NDksImV4cCI6MTc0Mzc1NDE0OX0.XnRGUIf7H9ODK85ZDlh-wOZwBF-cbcDU_NF2OC3ks8Q",
-          },
-          body: JSON.stringify(updateMovie),
-        })
-          .then((response) => {
-            if (response.ok) {
-              alert("Film aggiornato con successo!");
-              window.location.href = "./homepage.html";
-            } else {
-              alert("Errore durante l'aggiornamento del film.");
-            }
-          })
-          .catch((error) => {
-            console.error("Errore:", error);
-            alert("Errore durante l'aggiornamento del film.");
-          });
-      });
 
       document.getElementById("deleteBtn").addEventListener("click", function () {
         if (confirm("Sei sicuro di voler eliminare questo film?")) {
@@ -95,7 +70,7 @@ const getMovieDetails = function () {
             .then((response) => {
               if (response.ok) {
                 alert("Film eliminato con successo!");
-                window.location.href = "./homepage.html";
+                window.location.href = "../index.html";
               } else {
                 alert("Errore durante l'eliminazione del film.");
               }
@@ -107,10 +82,6 @@ const getMovieDetails = function () {
         }
       });
     })
-    .catch((error) => {
-      console.error("Errore:", error);
-      alert("Errore nel recupero dei dettagli del film.");
-    });
 };
 
 getMovieDetails();

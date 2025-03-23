@@ -29,108 +29,80 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <li class="nav-item active">
-                <a class="nav-link fs-3" href="./index.html">Home</a>
+                <a
+                  class="display-1 nav-link fs-3"
+                  style="color: #000000"
+                  href="./index.html"
+                  >Home
+                  <span class="visually-hidden-focusable">(current)</span></a
+                >
               </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4" href="./backoffice.html">Backoffice</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4" href="#">Recensioni</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-4" href="#forum">Forum</a>
-              </li>
+
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link fs-4 dropdown-toggle"
+                  class="nav-link fs-4"
+                  style="color: #000000"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
-                  >Registi</a
+                  aria-expanded="false"
                 >
+                  Registi
+                </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Charlie Chaplin</a></li>
                   <li><a class="dropdown-item" href="#">Buster Keaton</a></li>
                   <li><a class="dropdown-item" href="#">Harold Lloyd</a></li>
-                  <li><a class="dropdown-item" href="#">F.W. Murnau</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      >Friedrich Wilhelm Murnau</a
+                    >
+                  </li>
                   <li><a class="dropdown-item" href="#">Robert Wiene</a></li>
                 </ul>
               </li>
+              <li class="nav-item">
+                <a class="nav-link fs-4" style="color: #000000" href="#"
+                  >Recensioni</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link fs-4" style="color: #000000" href="#forum"
+                  >Forum</a
+                >
+              </li>
             </ul>
-            <form class="d-flex" role="search">
+            <form class="d-flex my-2 my-lg-0" role="search">
               <input
                 class="form-control me-2"
                 type="search"
                 placeholder="Cerca"
+                aria-label="Search"
               />
-              <button class="btn btn-custom" type="submit">Cerca</button>
+              <button class="btn btn-custom my-2 my-sm-0" type="submit">
+                Cerca
+              </button>
             </form>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="flex-grow-1 my-4">
-      <h2 class="text-center">Modifica Film</h2>
-      <div class="container">
-        <div class="row justify-content-center d-none" id="movieDetail">
-          <div class="col col-12 col-lg-6 col-md-8">
-            <form id="formEdit">
-              <div class="mb-3">
-                <label for="editName" class="form-label">Titolo</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="editName"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="editDescription" class="form-label"
-                  >Descrizione</label
-                >
-                <textarea
-                  class="form-control"
-                  id="editDescription"
-                  rows="3"
-                  required
-                ></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="editPrice" class="form-label">Prezzo</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="editPrice"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="editImageUrl" class="form-label"
-                  >URL Immagine</label
-                >
-                <input
-                  type="url"
-                  class="form-control"
-                  id="editImageUrl"
-                  required
-                />
-              </div>
-              <button type="submit" class="btn btn-success">
-                Salva modifiche
-              </button>
-              <button type="button" class="btn btn-danger ms-2" id="deleteBtn">
-                Elimina film
-              </button>
-            </form>
-          </div>
-        </div>
+    <main class="flex-grow-1">
+      <div class="container mt-5">
+        <div id="movieDetails" class="row justify-content-center"></div>
+        <div class="row justify-content-center mt-3"></div>
       </div>
     </main>
 

@@ -67,16 +67,15 @@ movieForm.addEventListener("submit", function (e) {
     name: name,
     description: description,
     brand: brand,
-    imageUrl: imageUrl, // versione primaria
-    price: price,
+    imageUrl: imageUrl,
+    price: price
   };
 
   const method = movieId ? "PUT" : "POST";
   const url = movieId ? APIUrl + movieId : APIUrl;
 
-  console.log("Invio dati a:", url);
-  console.log("Metodo:", method);
-  console.log("Payload:", movie);
+  console.log("Dati inviati:", movie);
+
 
   fetch(url, {
     method,
@@ -93,10 +92,12 @@ movieForm.addEventListener("submit", function (e) {
         movieForm.reset();
       } else {
         console.warn("Status code:", response.status);
-        return response.json().then(err => {
-          console.error("Errore dettagliato dal server:", err);
+        return response.text().then(errText => {
+          console.error("Errore dettagliato (testo):", errText);
           throw new Error("Errore nella risposta del server");
         });
+        
+      
       }
     })
     .catch((err) => {

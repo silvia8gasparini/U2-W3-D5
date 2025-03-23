@@ -34,10 +34,10 @@ const getEvents = function () {
 
       data.forEach((film) => {
         const col = document.createElement("div");
-        col.className = "col-md-4 mb-4";
+        col.className = "col-md-3 mb-4";
 
         col.innerHTML = `
-          <div class="card h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
+          <div class="card vh-100 shadow p-3 mb-5 bg-body-tertiary rounded">
             <img src="${film.imageUrl}" class="card-img-top" alt="${film.name}">
             <div class="card-body">
               <h5 class="card-title">${film.name}</h5>
