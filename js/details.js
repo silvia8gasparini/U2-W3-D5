@@ -48,7 +48,7 @@ const getMovieDetails = function () {
       document.getElementById("editDescription").value = data.description;
       document.getElementById("editPrice").value = data.price;
       document.getElementById("editImgUrl").value = data.imageUrl;
-      document.getElementById("movieDetails").classList.remove("d-none");
+
 
       document.getElementById("deleteBtn").addEventListener("click", function () {
         if (confirm("Sei sicuro di voler eliminare questo film?")) {
