@@ -30,7 +30,7 @@ const getEvents = function () {
       console.log("DATI RICEVUTI DAL SERVER", data);
 
       const row = document.getElementById("events-row");
-      row.innerHTML = ""; // svuota prima
+      row.innerHTML = "";
 
       data.forEach((film) => {
         const col = document.createElement("div");
