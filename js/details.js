@@ -31,7 +31,7 @@ const getMovieDetails = function () {
       const movieDetails = document.getElementById("movieDetails");
       movieDetails.innerHTML = `
         <div class="col-12 col-md-6 col-lg-4">
-          <div class="card text-dark border-0 d-flex flex-column">
+          <div class="card text-dark border-1 shadow d-flex flex-column mb-5">
             <img src="${data.imageUrl}" class="card-img-top" alt="${data.name}">
             <div class="card-body d-flex flex-column justify-content-between">
               <h5 class="card-title">${data.name}</h5>
